@@ -1,0 +1,16 @@
+{
+    "name": "Global Company Rules",
+    "description": "Global Company Ruleset",
+    "rules": [
+        {
+            "id": "LC0002",
+            "action": "None",
+            "justification": "Any Commit(); needs a code comment"
+        },
+        {
+            "id": "LC0010",
+            "action": "None",
+            "justification": "Show warning about code metrics for each function or trigger"
+        }
+    ]
+}

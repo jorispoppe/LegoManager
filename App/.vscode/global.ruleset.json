@@ -1,0 +1,26 @@
+{
+    "name": "Global Company Rules",
+    "description": "Global Company Ruleset",
+    "rules": [
+        {
+            "id": "AA0215",
+            "action" : "None",
+            "justification": "Follow the style guide about the best practices for naming."
+        },
+        {
+            "id": "AA0241",
+            "action" : "None",
+            "justification": "Use all lowercase letters for reserved language keywords."
+        },
+        {
+            "id": "LC0002",
+            "action": "None",
+            "justification": "Any Commit(); needs a code comment"
+        },
+        {
+            "id": "LC0010",
+            "action": "None",
+            "justification": "Show warning about code metrics for each function or trigger"
+        }
+    ]
+}

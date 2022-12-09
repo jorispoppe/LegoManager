@@ -1,5 +1,7 @@
-# AL-Go Template
-## Per Tenant Extension Project
-This template repository can be used for managing Per Tenant Extensions for Business Central.
+# Lego Collection Manager
 
-Please consult https://github.com/microsoft/AL-Go/#readme for scenarios on usage
+This Business Central extension is for learning purposes.
+
+## Relevant Links
+
+[Github](https://github.com/jorispoppe/LegoManager)

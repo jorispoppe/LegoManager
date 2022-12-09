@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "name": "AL-Go",
+            "path": ".AL-Go"
+        },
+        {
+            "name": "Lego Manager (App)",
+            "path": "App"
+        },
+        {
+            "name": "Lego Manager (Test)",
+            "path": "Test"
+        }
+    ],
+}
