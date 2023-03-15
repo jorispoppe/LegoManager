@@ -1,0 +1,13 @@
+{
+    "language": "en",
+    "enabled": true,
+    "dictionaries": ["al", "bc", "xmldoc", "Project"],
+    "enableFiletypes": ["al"],
+    "import": [
+        "./cspell-ext.json"
+    ],
+    "ignorePaths": ["**/Dictionaries"],
+    "dictionaryDefinitions": [
+        { "name": "Project", "path": "./dict/project.txt"}
+    ]
+}

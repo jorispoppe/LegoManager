@@ -11,6 +11,15 @@
         {
             "name": "Lego Manager (Test)",
             "path": "Test"
-        }
+        },
+        {
+            "name": "Dictionaries",
+            "path": "Dictionaries"
+        },
     ],
+    "settings": {
+        "cSpell.import": [
+            "${workspaceFolder:Dictionaries}/cspell.json"
+        ]
+    }
 }

@@ -1,0 +1,42 @@
+{
+    "id": "al",
+    "version": "0.2",
+    "name": "AL",
+    "description": "AL Dictionary",
+    "dictionaryDefinitions": [
+        {
+            "name": "al",
+            "path": "./dict/al.txt",
+            "description": "AL Keywords Dictionary"
+        },
+        {
+            "name": "bc",
+            "path": "./dict/bc.txt",
+            "description": "Business Central Dictionary"
+        },
+        {
+            "name": "xmldoc",
+            "path": "./dict/xmldoc.txt",
+            "description": "XML Doc Dictionary"
+        }
+    ],
+    "dictionaries": [],
+    "enableFiletypes": ["al"],
+    "languageSettings": [
+        {
+            "languageId": "al",
+            "locale": "*",
+            "includeRegExpList": [],
+            "ignoreRegExpList": [],
+            "patterns": [],
+            "dictionaries": ["al", "bc", "xmldoc"],
+            "dictionaryDefinitions": []
+        }
+    ],
+    "overrides": [
+        {
+            "filename": "**/*.al",
+            "languageId": "al"
+        }
+    ]
+}
