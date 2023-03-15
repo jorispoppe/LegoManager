@@ -3,6 +3,11 @@
     "description": "Global Company Ruleset",
     "rules": [
         {
+            "id": "AA0072",
+            "action" : "None",
+            "justification": "The name of variables and parameters must be suffixed with the type or object name."
+        },
+        {
             "id": "AA0215",
             "action" : "None",
             "justification": "Follow the style guide about the best practices for naming."

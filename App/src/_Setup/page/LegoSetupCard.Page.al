@@ -1,14 +1,14 @@
 /// <summary>
-/// Page "JPOLegoSetupCard" (ID 60000).
+/// Page "JPO Lego Setup Card" (ID 60000).
 /// </summary>
-page 60000 JPOLegoSetupCard
+page 60000 "JPO Lego Setup Card"
 {
     ApplicationArea = All;
     Caption = 'Lego Manager - Setup';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
-    SourceTable = JPOLegoSetup;
+    SourceTable = "JPO Lego Setup";
     UsageCategory = Administration;
 
     layout

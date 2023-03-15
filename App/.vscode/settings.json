@@ -62,6 +62,7 @@
     "alOutline.fixCodeCopMissingParenthesesOnSave": true,
     "alOutline.lockRemovedFieldsCaptions": true,
     "alOutline.noEmptyLinesAtTheEndOfWizardGeneratedFiles": true,
+    "ALTB.UseOldFileNamingConventions": false,
     "al-xml-doc.CheckObjectDocumentationInformationLevel": "Warning",
     "al-xml-doc.CheckProcedureDocumentationForAccessLevel": [
         "Public"
@@ -75,7 +76,6 @@
         "Control Add-In Events"
     ],
     "al-xml-doc.CheckProcedureDocumentationInformationLevel": "Warning",
-	"ALTB.UseOldFileNamingConventions": false,
 	"CRS.AlSubFolderName": "src",
     "CRS.ExtensionObjectNamePattern": "",
     "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",

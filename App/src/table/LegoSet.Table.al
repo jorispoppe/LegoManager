@@ -1,10 +1,12 @@
 /// <summary>
-/// Table "JPOLegoSet" (ID 60003).
+/// Table "JPO Lego Set" (ID 60003).
 /// </summary>
-table 60003 JPOLegoSet
+table 60003 "JPO Lego Set"
 {
-    Caption = 'Lego Manager - Set';
+    Caption = 'Lego Set';
     DataClassification = CustomerContent;
+    DrillDownPageId = "JPO Lego Set List";
+    LookupPageId = "JPO Lego Set List";
 
     fields
     {
@@ -36,11 +38,16 @@ table 60003 JPOLegoSet
         field(5; "Theme No."; Code[20])
         {
             Caption = 'Theme No.';
-            TableRelation = JPOLegoTheme;
+            TableRelation = "JPO Lego Theme";
+
+            trigger OnValidate()
+            begin
+                CalcFields("Theme Title");
+            end;
         }
         field(6; "Theme Title"; Text[100])
         {
-            CalcFormula = lookup(JPOLegoTheme.Title where("No." = field("Theme No.")));
+            CalcFormula = lookup("JPO Lego Theme".Title where("No." = field("Theme No.")));
             Caption = 'Theme Title';
             Editable = false;
             FieldClass = FlowField;
@@ -48,11 +55,16 @@ table 60003 JPOLegoSet
         field(7; "SubTheme No."; Code[20])
         {
             Caption = 'SubTheme No.';
-            TableRelation = JPOLegoSubTheme where("Theme No." = field("Theme No."));
+            TableRelation = "JPO Lego SubTheme" where("Theme No." = field("Theme No."));
+
+            trigger OnValidate()
+            begin
+                CalcFields("SubTheme Title");
+            end;
         }
         field(8; "SubTheme Title"; Text[100])
         {
-            CalcFormula = lookup(JPOLegoSubTheme.Title where("No." = field("SubTheme No.")));
+            CalcFormula = lookup("JPO Lego SubTheme".Title where("No." = field("SubTheme No.")));
             Caption = 'SubTheme Title';
             Editable = false;
             FieldClass = FlowField;
@@ -95,41 +107,41 @@ table 60003 JPOLegoSet
     }
 
     var
-        JPOLegoSetup: Record JPOLegoSetup;
+        JPOLegoSetup: Record "JPO Lego Setup";
         NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
+    var
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeInsert(Rec, IsHandled);
+        if IsHandled then
+            exit;
+
         if "No." = '' then begin
             JPOLegoSetup.Get();
             JPOLegoSetup.TestField("Set Nos.");
             NoSeriesManagement.InitSeries(JPOLegoSetup."Set Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
-    end;
 
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
+        OnAfterOnInsert(Rec, xRec);
     end;
 
     /// <summary>
     /// AssistEdit.
     /// </summary>
     /// <returns>Return value of type Boolean.</returns>
-    procedure AssistEdit(): Boolean
+    procedure AssistEdit() Result: Boolean
     var
-        JPOLegoSet: Record JPOLegoSet;
+        JPOLegoSet: Record "JPO Lego Set";
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeAssistEdit(Rec, xRec, Result, IsHandled);
+        if IsHandled then
+            exit(Result);
+
         JPOLegoSet := Rec;
         JPOLegoSetup.Get();
         JPOLegoSetup.TestField("Set Nos.");
@@ -138,5 +150,20 @@ table 60003 JPOLegoSet
             Rec := JPOLegoSet;
             exit(true);
         end;
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterOnInsert(Rec: Record "JPO Lego Set"; xRec: Record "JPO Lego Set")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeAssistEdit(Rec: Record "JPO Lego Set"; xRec: Record "JPO Lego Set"; var Result: Boolean; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeInsert(Rec: Record "JPO Lego Set"; var IsHandled: Boolean)
+    begin
     end;
 }
