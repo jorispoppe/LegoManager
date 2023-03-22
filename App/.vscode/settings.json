@@ -82,7 +82,7 @@
     "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.OnSaveAlFileAction": "Rename",
-    "CRS.ObjectNamePrefix": "JPO",
+    "CRS.ObjectNamePrefix": "LEGO",
     "CRS.RemovePrefixFromFilename": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true

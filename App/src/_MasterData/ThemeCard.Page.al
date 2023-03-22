@@ -1,12 +1,12 @@
 /// <summary>
-/// Page "JPO Lego Theme Card" (ID 60004).
+/// Page "LEGO Theme Card" (ID 60004).
 /// </summary>
-page 60004 "JPO Lego Theme Card"
+page 60004 "LEGO Theme Card"
 {
     ApplicationArea = All;
-    Caption = 'JPO Lego Theme Card';
+    Caption = 'Lego Theme Card';
     PageType = Card;
-    SourceTable = "JPO Lego Theme";
+    SourceTable = "LEGO Theme";
     UsageCategory = None;
 
     layout

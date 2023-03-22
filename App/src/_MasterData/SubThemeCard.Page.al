@@ -1,12 +1,12 @@
 /// <summary>
-/// Page "JPO Lego SubTheme Card" (ID 60005).
+/// Page "LEGO SubTheme Card" (ID 60005).
 /// </summary>
-page 60005 "JPO Lego SubTheme Card"
+page 60005 "LEGO SubTheme Card"
 {
     ApplicationArea = All;
-    Caption = 'JPO Lego SubTheme Card';
+    Caption = 'Lego SubTheme Card';
     PageType = Card;
-    SourceTable = "JPO Lego SubTheme";
+    SourceTable = "LEGO SubTheme";
     UsageCategory = None;
 
     layout

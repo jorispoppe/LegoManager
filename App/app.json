@@ -24,7 +24,7 @@
     "idRanges": [
         {
             "from": 60000,
-            "to": 61000
+            "to": 65000
         }
     ],
     "resourceExposurePolicy": {
@@ -36,6 +36,7 @@
     "target": "Cloud",
     "features": [
         "TranslationFile",
-        "NoImplicitWith"
+        "NoImplicitWith",
+        "NoPromotedActionProperties"
     ]
 }

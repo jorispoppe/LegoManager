@@ -1,9 +1,9 @@
 /// <summary>
-/// Table "JPO Lego Setup" (ID 60000).
+/// Table "LEGO Setup" (ID 60000).
 /// </summary>
-table 60000 "JPO Lego Setup"
+table 60000 "LEGO Setup"
 {
-    Caption = 'Lego Manager - Setup';
+    Caption = 'Lego Manager Setup';
     DataClassification = CustomerContent;
 
     fields
@@ -31,7 +31,7 @@ table 60000 "JPO Lego Setup"
         {
             Caption = 'Brickset ApiKey';
         }
-        field(6; "Backup Type"; enum "JPO Lego BackupType")
+        field(6; "Backup Type"; enum "LEGO BackupType")
         {
             Caption = 'Backup Type';
         }

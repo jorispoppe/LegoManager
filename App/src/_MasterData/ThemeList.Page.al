@@ -1,13 +1,13 @@
 /// <summary>
-/// Page "JPO Lego SubTheme List" (ID 60002).
+/// Page "LEGO Theme List" (ID 60001).
 /// </summary>
-page 60002 "JPO Lego SubTheme List"
+page 60001 "LEGO Theme List"
 {
     ApplicationArea = All;
-    Caption = 'Lego Subthemes';
-    CardPageId = "JPO Lego SubTheme Card";
+    Caption = 'Lego Theme List';
+    CardPageId = "LEGO Theme Card";
     PageType = List;
-    SourceTable = "JPO Lego SubTheme";
+    SourceTable = "LEGO Theme";
     UsageCategory = Lists;
 
     layout
@@ -19,10 +19,6 @@ page 60002 "JPO Lego SubTheme List"
                 field(Title; Rec.Title)
                 {
                     ToolTip = 'Specifies the value of the Title field.';
-                }
-                field("Theme Title"; Rec."Theme Title")
-                {
-                    ToolTip = 'Specifies the value of the Theme Title field.';
                 }
             }
         }

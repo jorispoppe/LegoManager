@@ -1,12 +1,12 @@
 /// <summary>
-/// Table "JPO Lego Theme" (ID 60001).
+/// Table "LEGO Theme" (ID 60001).
 /// </summary>
-table 60001 "JPO Lego Theme"
+table 60001 "LEGO Theme"
 {
     Caption = 'Lego Theme';
     DataClassification = CustomerContent;
-    DrillDownPageId = "JPO Lego Theme List";
-    LookupPageId = "JPO Lego Theme List";
+    DrillDownPageId = "LEGO Theme List";
+    LookupPageId = "LEGO Theme List";
 
     fields
     {
@@ -17,8 +17,8 @@ table 60001 "JPO Lego Theme"
             trigger OnValidate()
             begin
                 if "No." <> xRec."No." then begin
-                    JPOLegoSetup.Get();
-                    NoSeriesManagement.TestManual(JPOLegoSetup."Theme Nos.");
+                    LegoSetup.Get();
+                    NoSeriesManagement.TestManual(LegoSetup."Theme Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -48,7 +48,7 @@ table 60001 "JPO Lego Theme"
     }
 
     var
-        JPOLegoSetup: Record "JPO Lego Setup";
+        LegoSetup: Record "LEGO Setup";
         NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
@@ -61,9 +61,9 @@ table 60001 "JPO Lego Theme"
             exit;
 
         if "No." = '' then begin
-            JPOLegoSetup.Get();
-            JPOLegoSetup.TestField("Theme Nos.");
-            NoSeriesManagement.InitSeries(JPOLegoSetup."Theme Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+            LegoSetup.Get();
+            LegoSetup.TestField("Theme Nos.");
+            NoSeriesManagement.InitSeries(LegoSetup."Theme Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
 
         OnAfterOnInsert(Rec, xRec);
@@ -75,7 +75,7 @@ table 60001 "JPO Lego Theme"
     /// <returns>Return value of type Boolean.</returns>
     procedure AssistEdit() Result: Boolean
     var
-        JPOLegoTheme: Record "JPO Lego Theme";
+        LegoTheme: Record "LEGO Theme";
         IsHandled: Boolean;
     begin
         IsHandled := false;
@@ -83,28 +83,28 @@ table 60001 "JPO Lego Theme"
         if IsHandled then
             exit(Result);
 
-        JPOLegoTheme := Rec;
-        JPOLegoSetup.Get();
-        JPOLegoSetup.TestField("Theme Nos.");
-        if NoSeriesManagement.SelectSeries(JPOLegoSetup."Theme Nos.", xRec."No. Series", "No. Series") then begin
+        LegoTheme := Rec;
+        LegoSetup.Get();
+        LegoSetup.TestField("Theme Nos.");
+        if NoSeriesManagement.SelectSeries(LegoSetup."Theme Nos.", xRec."No. Series", "No. Series") then begin
             NoSeriesManagement.SetSeries("No.");
-            Rec := JPOLegoTheme;
+            Rec := LegoTheme;
             exit(true);
         end;
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterOnInsert(Rec: Record "JPO Lego Theme"; xRec: Record "JPO Lego Theme")
+    local procedure OnAfterOnInsert(Rec: Record "LEGO Theme"; xRec: Record "LEGO Theme")
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeAssistEdit(Rec: Record "JPO Lego Theme"; xRec: Record "JPO Lego Theme"; var Result: Boolean; var IsHandled: Boolean)
+    local procedure OnBeforeAssistEdit(Rec: Record "LEGO Theme"; xRec: Record "LEGO Theme"; var Result: Boolean; var IsHandled: Boolean)
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeInsert(Rec: Record "JPO Lego Theme"; var IsHandled: Boolean)
+    local procedure OnBeforeInsert(Rec: Record "LEGO Theme"; var IsHandled: Boolean)
     begin
     end;
 }

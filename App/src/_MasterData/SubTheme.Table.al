@@ -1,12 +1,12 @@
 /// <summary>
-/// Table "JPO Lego SubTheme" (ID 60002).
+/// Table "LEGO SubTheme" (ID 60002).
 /// </summary>
-table 60002 "JPO Lego SubTheme"
+table 60002 "LEGO SubTheme"
 {
     Caption = 'Lego SubTheme';
     DataClassification = CustomerContent;
-    DrillDownPageId = "JPO Lego SubTheme List";
-    LookupPageId = "JPO Lego SubTheme List";
+    DrillDownPageId = "LEGO SubTheme List";
+    LookupPageId = "LEGO SubTheme List";
 
     fields
     {
@@ -17,8 +17,8 @@ table 60002 "JPO Lego SubTheme"
             trigger OnValidate()
             begin
                 if "No." <> xRec."No." then begin
-                    JPOLegoSetup.Get();
-                    NoSeriesManagement.TestManual(JPOLegoSetup."SubTheme Nos.");
+                    LegoSetup.Get();
+                    NoSeriesManagement.TestManual(LegoSetup."SubTheme Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -30,11 +30,11 @@ table 60002 "JPO Lego SubTheme"
         field(3; "Theme No."; Code[20])
         {
             Caption = 'Theme No.';
-            TableRelation = "JPO Lego Theme";
+            TableRelation = "LEGO Theme";
         }
         field(4; "Theme Title"; Text[100])
         {
-            CalcFormula = lookup("JPO Lego Theme".Title where("No." = field("Theme No.")));
+            CalcFormula = lookup("LEGO Theme".Title where("No." = field("Theme No.")));
             Caption = 'Theme Title';
             Editable = false;
             FieldClass = FlowField;
@@ -60,7 +60,7 @@ table 60002 "JPO Lego SubTheme"
     }
 
     var
-        JPOLegoSetup: Record "JPO Lego Setup";
+        LegoSetup: Record "LEGO Setup";
         NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
@@ -73,9 +73,9 @@ table 60002 "JPO Lego SubTheme"
             exit;
 
         if "No." = '' then begin
-            JPOLegoSetup.Get();
-            JPOLegoSetup.TestField("SubTheme Nos.");
-            NoSeriesManagement.InitSeries(JPOLegoSetup."SubTheme Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+            LegoSetup.Get();
+            LegoSetup.TestField("SubTheme Nos.");
+            NoSeriesManagement.InitSeries(LegoSetup."SubTheme Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         end;
 
         OnAfterOnInsert(Rec, xRec);
@@ -87,7 +87,7 @@ table 60002 "JPO Lego SubTheme"
     /// <returns>Return value of type Boolean.</returns>
     procedure AssistEdit() Result: Boolean
     var
-        JPOLegoSubTheme: Record "JPO Lego SubTheme";
+        LegoSubTheme: Record "LEGO SubTheme";
         IsHandled: Boolean;
     begin
         IsHandled := false;
@@ -95,28 +95,28 @@ table 60002 "JPO Lego SubTheme"
         if IsHandled then
             exit(Result);
 
-        JPOLegoSubTheme := Rec;
-        JPOLegoSetup.Get();
-        JPOLegoSetup.TestField("SubTheme Nos.");
-        if NoSeriesManagement.SelectSeries(JPOLegoSetup."SubTheme Nos.", xRec."No. Series", "No. Series") then begin
+        LegoSubTheme := Rec;
+        LegoSetup.Get();
+        LegoSetup.TestField("SubTheme Nos.");
+        if NoSeriesManagement.SelectSeries(LegoSetup."SubTheme Nos.", xRec."No. Series", "No. Series") then begin
             NoSeriesManagement.SetSeries("No.");
-            Rec := JPOLegoSubTheme;
+            Rec := LegoSubTheme;
             exit(true);
         end;
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterOnInsert(Rec: Record "JPO Lego SubTheme"; xRec: Record "JPO Lego SubTheme")
+    local procedure OnAfterOnInsert(Rec: Record "LEGO SubTheme"; xRec: Record "LEGO SubTheme")
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeAssistEdit(Rec: Record "JPO Lego SubTheme"; xRec: Record "JPO Lego SubTheme"; var Result: Boolean; var IsHandled: Boolean)
+    local procedure OnBeforeAssistEdit(Rec: Record "LEGO SubTheme"; xRec: Record "LEGO SubTheme"; var Result: Boolean; var IsHandled: Boolean)
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeInsert(Rec: Record "JPO Lego SubTheme"; var IsHandled: Boolean)
+    local procedure OnBeforeInsert(Rec: Record "LEGO SubTheme"; var IsHandled: Boolean)
     begin
     end;
 }

@@ -1,13 +1,13 @@
 /// <summary>
-/// Page "JPO Lego Set List" (ID 60003).
+/// Page "LEGO Set List" (ID 60003).
 /// </summary>
-page 60003 "JPO Lego Set List"
+page 60003 "LEGO Set List"
 {
     ApplicationArea = All;
-    Caption = 'Lego Sets';
-    CardPageId = "JPO Lego Set Card";
+    Caption = 'Lego Set List';
+    CardPageId = "LEGO Set Card";
     PageType = List;
-    SourceTable = "JPO Lego Set";
+    SourceTable = "LEGO Set";
     UsageCategory = Lists;
 
     layout
