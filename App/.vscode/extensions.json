@@ -1,18 +1,5 @@
 {
     "recommendations": [
-        "ms-dynamics-smb.al",
-        "365businessdevelopment.bdev-al-xml-doc",
-        "andrzejzwierzchowski.al-code-outline",
-        "BartPermentier.al-toolbox",
-        "davidfeldhoff.al-codeactions",
-        "jamespearson.al-test-runner",
-        "martonsagi.al-object-designer",
-        "nabsolutions.nab-al-tools",
-        "rasmus.al-var-helper",
-        "rvanbekkum.xliff-sync",
-        "StefanMaron.businesscentral-lintercop",
-        "vjeko.vjeko-al-objid",
-        "waldo.crs-al-language-extension",
-        "wbrakowski.al-navigator"
+        "JorisPoppe.al-developer-pack"
     ]
 }
