@@ -5,7 +5,7 @@
         "${PerTenantExtensionCop}",
         "${analyzerFolder}BusinessCentral.LinterCop.dll"
     ],
-	"al.enableCodeActions": true,
+    "al.enableCodeActions": true,
     "al.enableCodeAnalysis": true,
     "al.ruleSetPath": "./.vscode/app.ruleset.json",
     "alOutline.addToolTipsToPageFields": true,
@@ -76,7 +76,7 @@
         "Control Add-In Events"
     ],
     "al-xml-doc.CheckProcedureDocumentationInformationLevel": "Warning",
-	"CRS.AlSubFolderName": "src",
+    "CRS.AlSubFolderName": "src",
     "CRS.ExtensionObjectNamePattern": "",
     "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
